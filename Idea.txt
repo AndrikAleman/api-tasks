@@ -1,0 +1,46 @@
+Sistema de Gestión de Tareas (To-Do List)
+
+Un sistema donde los usuarios puedan crear, editar, eliminar y marcar como completadas sus tareas.
+Incluye funcionalidad de autenticación para que cada usuario tenga su propia lista de tareas.
+Usa MySQL para almacenar las tareas de los usuarios y Spring Boot para manejar la lógica del backend.
+
+Base de datos mysql---------------------------
+
+create database apiTaskProject;
+use apiTaskProject;
+
+CREATE TABLE tasks (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    user_id INT NOT NULL,
+    title VARCHAR(100) NOT NULL,
+    description TEXT,
+    datec DATETIME DEFAULT CURRENT_TIMESTAMP, -- Fecha de creación (LocalDateTime en Java)
+    datef DATETIME,
+    status VARCHAR(20) DEFAULT 'PENDING',
+    priority INT DEFAULT 0,
+    type VARCHAR(50),
+    created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
+    updated_at DATETIME DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+    FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE
+);
+    CREATE TABLE users (
+        id INT AUTO_INCREMENT PRIMARY KEY,
+        username VARCHAR(50) NOT NULL UNIQUE,
+        email VARCHAR(100) NOT NULL UNIQUE,
+        password VARCHAR(255) NOT NULL,
+        created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+        updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+    );
+
+
+    Registros---------------------------------------
+    INSERT INTO users (username, email, password)
+    VALUES ('andrik', 'andrik@gmail.com', '12345');
+
+    INSERT INTO tasks (user_id, title, description, datef, status, priority, type)
+    VALUES
+    (1, 'Tarea ingles', 'Acabar la hoja de lectura', '2024-10-30 23:59:59', 'IN_PROGRESS', 1, 'Escuela');
+
+    Notas---------------------------------------------
+
+    47
