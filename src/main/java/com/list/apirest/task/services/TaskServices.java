@@ -9,7 +9,7 @@ import java.util.List;
 
 @Service    //This annotation is so important
 public class TaskServices {
-    //Inyeccion de elementos
+    //Element Injection
     private final TaskRepository taskRepository;
 
     @Autowired
@@ -21,12 +21,18 @@ public class TaskServices {
         return this.taskRepository.findAll();
     }
 
-    //Creamos la clase para guardar
+    //We create the class to save
     public void newTask(tasks task){
         taskRepository.save(task);
     }
 
+    //We create the class to delete
     public void deleteTask(tasks task){
         taskRepository.delete(task);
+    }
+
+    //We create the class to update
+    public void updateTask(tasks task){
+        taskRepository.save(task);
     }
 }

@@ -9,12 +9,12 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping(path = "api/v1/task") //Esto es para este contenido se obtenga en este path
+@RequestMapping(path = "api/v1/task") //This is for this content to be obtained in this path
 public class TaskController {
-    private final TaskServices taskServices;      //Para crear una inyeccion
+    private final TaskServices taskServices;      //To create an injection
 
     @Autowired
-    public TaskController(TaskServices taskServices) {  //Si aqui hay un error es por la anotacion Service
+    public TaskController(TaskServices taskServices) {  //If there is an error here, it is because of the Service annotation
         this.taskServices = taskServices;
     }
 
@@ -33,5 +33,10 @@ public class TaskController {
     @DeleteMapping
     public void deleteTask(@RequestBody tasks task) {
         this.taskServices.deleteTask(task);
+    }
+
+    @PutMapping
+    public void updateTask(@RequestBody tasks task) {
+        this.taskServices.updateTask(task);
     }
 }
