@@ -34,6 +34,7 @@ CREATE TABLE tasks (
 
 
     Registros---------------------------------------
+
     INSERT INTO users (username, email, password)
     VALUES ('andrik', 'andrik@gmail.com', '12345');
 
@@ -43,4 +44,5 @@ CREATE TABLE tasks (
 
     Notas---------------------------------------------
 
-    47
+    1
+    10

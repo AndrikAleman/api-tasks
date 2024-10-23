@@ -1,7 +1,7 @@
 package com.list.apirest.task.services;
 
 import com.list.apirest.task.DAO.TaskRepository;
-import com.list.apirest.task.tasks;
+import com.list.apirest.task.Entity.tasks;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -19,5 +19,14 @@ public class TaskServices {
 
     public List<tasks> getTasks(){
         return this.taskRepository.findAll();
+    }
+
+    //Creamos la clase para guardar
+    public void newTask(tasks task){
+        taskRepository.save(task);
+    }
+
+    public void deleteTask(tasks task){
+        taskRepository.delete(task);
     }
 }

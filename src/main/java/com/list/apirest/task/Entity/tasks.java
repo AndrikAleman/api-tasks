@@ -1,4 +1,4 @@
-package com.list.apirest.task;
+package com.list.apirest.task.Entity;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
@@ -27,6 +27,7 @@ public class tasks {
 
     private String type;
 
+    //Important
     public tasks() {
     }
 

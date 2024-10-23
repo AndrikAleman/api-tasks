@@ -2,11 +2,9 @@ package com.list.apirest.task.controllers;
 
 import com.list.apirest.task.services.TaskServices;
 
-import com.list.apirest.task.tasks;
+import com.list.apirest.task.Entity.tasks;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -23,5 +21,17 @@ public class TaskController {
     @GetMapping
     public List<tasks> getTasks() {
         return taskServices.getTasks();
+    }
+
+    //Guardar tarea o registrar
+    //1- before, create a class newTask in service
+    @PostMapping
+    public void postTask(@RequestBody tasks task) {
+        this.taskServices.newTask(task);
+    }
+
+    @DeleteMapping
+    public void deleteTask(@RequestBody tasks task) {
+        this.taskServices.deleteTask(task);
     }
 }
