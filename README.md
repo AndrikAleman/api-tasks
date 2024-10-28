@@ -1,13 +1,10 @@
-# Sistema de Gestión de Tareas (To-Do List)
+# ApiRest para consulta de users y tasks
 
-Este proyecto es un **Sistema de Gestión de Tareas** donde los usuarios pueden:
+Este proyecto es un **Api Rest** donde los usuarios pueden:
 
 - Crear nuevas tareas.
 - Editar tareas existentes.
 - Eliminar tareas.
-- Marcar tareas como completadas.
-
-Cada usuario tiene su propia lista de tareas, y para acceder a ella, es necesario autenticarse.
 
 ## Tecnologías Utilizadas
 
@@ -19,8 +16,6 @@ Cada usuario tiene su propia lista de tareas, y para acceder a ella, es necesari
 
 ## Características del Sistema
 
-- **Autenticación:** Los usuarios deben iniciar sesión para acceder a sus tareas.
-- **Gestión de tareas:** Crear, editar, eliminar y marcar tareas como completadas.
 - **Persistencia de datos:** Las tareas y la información de usuarios se almacenan en una base de datos MySQL.
 - **API RESTful:** La aplicación cuenta con endpoints que siguen el estándar de **API REST** para manejar la gestión de tareas y autenticación.
 
